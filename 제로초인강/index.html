@@ -58,6 +58,9 @@
             --color_enter: #e538e2;
             --color_enter_rgb: 229, 56, 226;
         }
+        *{
+            box-sizing: border-box;
+        }
         html{
             margin: 0;
             padding: 0;
@@ -77,14 +80,16 @@
         #header{
             text-align: left;
         }
-        #header-hamburger{
+        #header-hamburger, #header-notice, #header-naverpay, #header-shopping, #header-talking{
             overflow: visible;
             position: relative;
-            padding: 10px;
             display: inline-block;
             background: none;
             border: none;
             cursor: pointer;
+        }
+        #header-hamburger{
+            padding: 10px;
         }
         #header-hambureger:hover > div{
             position: relative;
@@ -112,6 +117,135 @@
             background-position: -311px -166px;
             position: relative;
         }
+
+        #header-naverpay{
+            width: 46px;
+            height: 46px;
+            padding: 8px 10px;
+        }
+        #header-naverpay:hover > div{
+            position: relative;
+            left: 1px;
+            top: 1px;
+        }
+        #header-naverpay:hover::before{
+            position:absolute;
+            content: '';
+            z-index: 0;
+            left: 1px;
+            top: 1px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: #e7eced;
+        }
+        #header-naverpay > div{
+            content: "";
+            display: block;
+            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.04eb92b7.png);
+            background-size: 463px 442px;
+            background-position: -248px -260px;
+            background-repeat: no-repeat;
+            width: 32px;
+            height: 32px;
+            position: relative;
+        }
+
+        #header-notice{
+            right: -1075px;
+            padding: 10px;
+        }
+        #header-notice:hover > div{
+            position: relative;
+            left: 1px;
+            top: 1px;
+        }
+        #header-notice:hover::before{
+            position:absolute;
+            content: '';
+            z-index: 0;
+            left: 1px;
+            top: 1px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: #e7eced;
+        }
+        #header-notice > div{
+                content: "";
+                display: block;
+                background-image: url(https://pm.pstatic.net/resources/asset/sp_main.04eb92b7.png);
+                background-size: 463px 442px;
+                background-position: -311px -232px;
+                background-repeat: no-repeat;
+                width: 32px;
+                height: 32px;
+                position: relative;
+        }
+
+        #header-shopping{
+            right: -1060px;
+            padding: 10px;
+        }
+        #header-shopping:hover > div{
+            position: relative;
+            left: 1px;
+            top: 1px;
+        }
+        #header-shopping:hover::before{
+            position:absolute;
+            content: '';
+            z-index: 0;
+            left: 1px;
+            top: 1px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: #e7eced;
+        }
+        #header-shopping > div{
+                content: "";
+                display: block;
+                background-image: url(https://pm.pstatic.net/resources/asset/sp_main.04eb92b7.png);
+                background-size: 463px 442px;
+                background-position: -33px -316px;
+                background-repeat: no-repeat;
+                width: 32px;
+                height: 32px;
+                position: relative;
+        }
+
+        #header-talking{
+            right: -910px;
+            padding: 10px;
+        }
+        #header-talking:hover > div{
+            position: relative;
+            left: 1px;
+            top: 1px;
+        }
+        #header-talking:hover::before{
+            position:absolute;
+            content: '';
+            z-index: 0;
+            left: 1px;
+            top: 1px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: #e7eced;
+        }
+        #header-talking > div{
+            content: "";
+            display: block;
+            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.04eb92b7.png);
+            background-size: 463px 442px;
+            background-position: -99px -316px;
+            background-repeat: no-repeat;
+            width: 32px;
+            height: 32px;
+            position: relative;
+        }
         #main{
             height: 2000px;
         }
@@ -133,6 +267,30 @@
                     <!-- ::before-->
                     <div></div>
                     <span class="blind">확장 영역</span>
+                    <!-- ::after-->
+                </button>
+                <button id="header-naverpay">
+                    <!-- ::before-->
+                    <div></div>
+                    <span class="blind">네이버 페이</span>
+                    <!-- ::after-->
+                </button>
+                <button id="header-notice">
+                    <!-- ::before-->
+                    <div></div>
+                    <span class="blind">알림</span>
+                    <!-- ::after-->
+                </button>
+                <button id="header-shopping">
+                    <!-- ::before-->
+                    <div></div>
+                    <span class="blind">알림</span>
+                    <!-- ::after-->
+                </button>
+                <button id="header-talking">
+                    <!-- ::before-->
+                    <div></div>
+                    <span class="blind">알림</span>
                     <!-- ::after-->
                 </button>
             </div>
