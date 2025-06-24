@@ -78,14 +78,26 @@
             text-align: left;
         }
         #header-hamburger{
-            margin-top: 18px;
+            overflow: visible;
+            position: relative;
             padding: 10px;
             display: inline-block;
             background: none;
             border: none;
             cursor: pointer;
         }
-        #header-hamburger:hover{
+        #header-hambureger:hover > div{
+            position: relative;
+            left: 1px;
+            top: 1px;
+        }
+        #header-hamburger:hover::before{
+            position:absolute;
+            content: '';
+            left: 1px;
+            top: 1px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             background-color: #e7eced;
         }
