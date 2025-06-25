@@ -9,6 +9,48 @@
             color: blue;
             cursor: pointer;
         }
+
+        #header-left {
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            height: 60px;
+            background-color: #24292f; 
+            gap: 16px;
+        }
+        #header-left button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #header-left-git-logo {
+            padding: 0;
+            width: 40px;
+            height: 40px;
+        }
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-image: url('./gitLogo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #header-left button:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 6px;
+        }
+        .caret {
+            font-size: 10px;
+            color: #8b949e;
+        }
     /*css부분*/
     </style>
 </head>
@@ -16,22 +58,28 @@
     <div id ="wrap"> 
         <div id="header-left">
             <button id="header-left-git-logo">
-                <div></div>
+                <div class="logo-icon"></div>
             </button>
             <button id="header-left-Why-Github?">
-                <div></div>
+                <span>Why GitHub?</span>
+                <span class="caret">▼</span>
             </button>
             <button id="header-left-Team">
+                <span>Team</span>
             </button>
             <button id="header-left-Enterprise">
+                <span>Enterprise</span>
             </button>
             <button id="header-left-Explore">
-                <div></div>
+                <span>Explore</span>
+                <span class="caret">▼</span>
             </button>
             <button id="header-left-Marketplace">
+                <span>Marketplace</span>
             </button>
             <button id="header-left-Pricing">
-                <div></div>
+                <span>Pricing</span>
+                <span class="caret">▼</span>
             </button>
         </div>
         <div id="header-right">
@@ -70,30 +118,27 @@
             <div id="main-right">
                 <div id="main-right-sign-box">
                     <form class="signup-form">
-                        <div>
+                        <section id="Sign-Username"> 
                             <label for ="Username" class = "blind">Username</label>
                             <input id="username" name="username" type="text" placeholder="Username">
-                            <section></section>
-                        </div>
-                        <input>
+                        </section>
+                        <section id="Sign-Email">
                             <label for ="Email" class = "blind">Username</label>
                             <input id="Email" name="Email" type="text" placeholder="Email">
-                            <section></section>
-                        </div>
-                        <div>
+                        </section>
+                        <section id="Sign-"Password">
                             <label for ="Password" class = "blind">Username</label>
                             <input id="Password" name="Password" type="text" placeholder="Password">
-                            <section></section>
-                        </div>
-                        <div id="main-right-sign-box-Warning1">
+                        </section>
+                        <section id="main-right-sign-box-Warning1">
                             <p>Make usre it's at least 15 characters OR at least 8 characters including a number and a lowercase leteer.<span class="blue">Learn more</span></p>
-                        </div>
-                        <div id="main-right-sign-up-box">
+                        </section>
+                        <section id="main-right-sign-up-box">
                             <button class="signup-button">Sign up for GitHub</button>
-                        </div>
-                        <div id="main-right-sign-box-Warning1">
+                        </section>
+                        <section id="main-right-sign-box-Warning2">
                             <p>By clicking "Sign up for Github". you agree to our <span class="blue">Teams of Service</span></p>
-                        </div>
+                        </section>
                     </form>
                 </div>
             </div>
