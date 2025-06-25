@@ -626,9 +626,29 @@
                     margin-bottom: 16px;
                     padding: 21px 20px 18px;
                     font-size: 1.4rem;
+                    display: flex;
+                    flex-flow: column;
+                }
+                #main-login > div:first-of-type{
+                    line-height: 20px;
                 }
                 #main-login > div:last-of-type{
                     font-size: 1.3rem;
+                }
+                #main-login > div:last-of-type a {
+                    text-decoration: none;
+                    color: var(--color_caption2);
+                    letter-spacing: -0.4px;
+                }
+                #main-login > div:last-of-type a:visited{
+                    color: inherit;
+                }
+                #main-login > div:last-of-type a:first-of-type, #main-login > div:last-of-type a:last-of-type{
+                    position: relative;
+                    top:1px;
+                }
+                #main-login > div:last-of-type a:hover{
+                    text-decoration: underline;
                 }
                 #main-login > div:last-of-type > a:nth-of-type(2)::before, #main-login > div:last-of-type > a:nth-of-type(2)::after{
                     content: '';
@@ -642,8 +662,24 @@
                 #main-login-button {
                     margin-top: 13px;
                     padding: 17px 0;
+                    border: 1px solid rgba(0,0,0,06);
+                    height: 56px;
+                    border-radius: 4px;
                     background-color: #03c75a;
                     color: white;
+                    text-decoration: none;
+                    margin-bottom: 16px;
+                }
+                #main-login-button i{
+                    vertical-align: -1px;
+                    background-image: url(./sp_main.04eb92b7.png);
+                    background-size: 463px 442px;
+                    background-position: 0px -301px;
+                    background-repeat: no-repeat;
+                    width: 72px;
+                    height: 14px;
+                    display: inline-block;
+                    margin: 3px 8px 0 0;
                 }
                 #main-right-ad{
                     height: 240px;
