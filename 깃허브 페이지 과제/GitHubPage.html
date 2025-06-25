@@ -3,9 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Github</title>
+    <style>
+        .blue {
+            color: blue;
+            cursor: pointer;
+        }
+    /*css부분*/
+    </style>
 </head>
 <body>
-    
+    <div id ="wrap"> 
+        <div id="header-left">
+            <button id="header-left-git-logo">
+                <div></div>
+            </button>
+            <button id="header-left-Why-Github?">
+                <div></div>
+            </button>
+            <button id="header-left-Team">
+            </button>
+            <button id="header-left-Enterprise">
+            </button>
+            <button id="header-left-Explore">
+                <div></div>
+            </button>
+            <button id="header-left-Marketplace">
+            </button>
+            <button id="header-left-Pricing">
+                <div></div>
+            </button>
+        </div>
+        <div id="header-right">
+            <section id="header-right-search-bar">
+                <label for ="search-input" class = "blind">Search Github</label>
+                <input id = "search-input" type="text" placeholder="Search Github">
+                <div id="header-right-search-bar-right">
+                    <form action="">
+                        <button id="search-svg" href="#">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="28" height="28" rx="6" fill="#2f2f2f" stroke="#555" stroke-width="2"/>
+                                <text x="16" y="21" text-anchor="middle" font-size="16" fill="#ccc" font-family="monospace">/</text>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </section>
+            <form action="">
+                <button id="header-right-Sign-in">Sign in</button>
+            </form>
+            <form action="">
+                <button id="header-right-Sign-up">Sign in</button>
+            </form>
+        <div id="main">
+            <div id="main-left">
+                <section id="main-left-up">
+                    <h1>Built for developers</h1>
+                </section>
+                <section id="main-left-down">
+                    <p>
+                        Github is a development platform inspired by the way you work. From <strong>open soure</strong> to <strong>business</strong>. you
+                        can host and review code, manage projects, and build software alongside 50 million developers.
+                    </p>
+                </section>
+            </div>
+            <div id="main-right">
+                <div id="main-right-sign-box">
+                    <form class="signup-form">
+                        <div>
+                            <label for ="Username" class = "blind">Username</label>
+                            <input id="username" name="username" type="text" placeholder="Username">
+                            <section></section>
+                        </div>
+                        <input>
+                            <label for ="Email" class = "blind">Username</label>
+                            <input id="Email" name="Email" type="text" placeholder="Email">
+                            <section></section>
+                        </div>
+                        <div>
+                            <label for ="Password" class = "blind">Username</label>
+                            <input id="Password" name="Password" type="text" placeholder="Password">
+                            <section></section>
+                        </div>
+                        <div id="main-right-sign-box-Warning1">
+                            <p>Make usre it's at least 15 characters OR at least 8 characters including a number and a lowercase leteer.<span class="blue">Learn more</span></p>
+                        </div>
+                        <div id="main-right-sign-up-box">
+                            <button class="signup-button">Sign up for GitHub</button>
+                        </div>
+                        <div id="main-right-sign-box-Warning1">
+                            <p>By clicking "Sign up for Github". you agree to our <span class="blue">Teams of Service</span></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <section id="footer-right-image">
+            </section>
+        </div>
+    </div>
 </body>
 </html>
