@@ -9,13 +9,22 @@
             color: blue;
             cursor: pointer;
         }
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
         #header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 20px;
             height: 60px;
-            background-color: #24292e; /* GitHub 스타일 */
+            background-color: #24292e; 
         }
         
         #header-left {
