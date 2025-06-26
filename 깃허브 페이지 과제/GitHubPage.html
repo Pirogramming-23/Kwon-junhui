@@ -106,14 +106,16 @@
             font-size: 60px;  
             margin-bottom: 24px;
         }
-        #main-left-up p {
-            width: 600px;        
+        #main-left-down p {
+            width: 400px;        
             font-size: 16px;
             line-height: 1.6;      
-            background-color: #2d2f33;  
-            padding: 20px;         
+            background-color: #24292f;      
             border-radius: 8px;    
-            color: white;
+            color: #ccc;
+        }
+        #main-left-down p{
+            color: #8b949e;
         }
 
         #main-right {
@@ -179,6 +181,19 @@
             margin-top: 30px;  
         }
 
+        .floating-logo {
+            position: absolute;
+            bottom: -30px;      
+            right: 180px;              
+            width: 400px;
+            height: 200px;
+            background-image: url('./깃헙이미지배경제거.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 2;
+        }
+        
     /*css부분*/
     </style>
 </head>
@@ -232,48 +247,52 @@
                 </form>
             </div>
         </div>
-        <div id="main">
-            <div id="main-left">
-                <section id="main-left-up">
-                    <h1>Built for developers</h1>
-                </section>
-                <section id="main-left-down">
-                    <p>
-                        Github is a development platform inspired by the way you work. From <strong>open soure</strong> to <strong>business</strong>. you
-                        can host and review code, manage projects, and build software alongside 50 million developers.
-                    </p>
-                </section>
-            </div>
-            <div id="main-right">
-                <div id="main-right-sign-box">
-                    <form class="signup-form">
-                        <section id="Sign-Username"> 
-                            <label for ="Username" class = "blind">Username</label>
-                            <input id="username" name="username" type="text" placeholder="Username">
-                        </section>
-                        <section id="Sign-Email">
-                            <label for ="Email" class = "blind">Email</label>
-                            <input id="Email" name="Email" type="text" placeholder="Email">
-                        </section>
-                        <section id="Sign-Password">
-                            <label for ="Password" class = "blind">Pass</label>
-                            <input id="Password" name="Password" type="text" placeholder="Password">
-                        </section>
-                        <section id="main-right-sign-box-Warning1">
-                            <p>Make usre it's at least 15 characters OR at least 8 characters including a number and a lowercase leteer.<span class="blue">Learn more</span></p>
-                        </section>
-                        <section id="main-right-sign-up-box">
-                            <button class="signup-button">Sign up for GitHub</button>
-                        </section>
-                        <section id="main-right-sign-box-Warning2">
-                            <p>By clicking "Sign up for Github". you agree to our <span class="blue">Teams of Service</span></p>
-                        </section>
-                    </form>
+        <div class="container">
+            <div id="main">
+                <div id="main-left">
+                    <section id="main-left-up">
+                        <h1>Built for developers</h1>
+                    </section>
+                    <section id="main-left-down">
+                        <p>
+                            Github is a development platform inspired by the way you work. From <strong>open soure</strong> to <strong>business</strong>. you
+                            can host and review code, manage projects, and build software alongside 50 million developers.
+                        </p>
+                    </section>
                 </div>
+                <div id="main-right">
+                    <div id="main-right-sign-box">
+                        <form class="signup-form">
+                            <section id="Sign-Username"> 
+                                <label for ="Username" class = "blind">Username</label>
+                                <input id="username" name="username" type="text" placeholder="Username">
+                            </section>
+                            <section id="Sign-Email">
+                                <label for ="Email" class = "blind">Email</label>
+                                <input id="Email" name="Email" type="text" placeholder="Email">
+                            </section>
+                            <section id="Sign-Password">
+                                <label for ="Password" class = "blind">Pass</label>
+                                <input id="Password" name="Password" type="text" placeholder="Password">
+                            </section>
+                            <section id="main-right-sign-box-Warning1">
+                                <p>Make usre it's at least 15 characters OR at least 8 characters including a number and a lowercase leteer.<span class="blue">Learn more</span></p>
+                            </section>
+                            <section id="main-right-sign-up-box">
+                                <button class="signup-button">Sign up for GitHub</button>
+                            </section>
+                            <section id="main-right-sign-box-Warning2">
+                                <p>By clicking "Sign up for Github". you agree to our <span class="blue">Teams of Service</span></p>
+                            </section>
+                        </form>
+                    </div>
+                </div>
+                <div class="floating-logo"></div>
             </div>
         </div>
         <div id="footer">
             <section id="footer-right-image">
+                <div class="footer-icon"></div>
             </section>
         </div>
     </div>
