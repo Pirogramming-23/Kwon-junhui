@@ -1,44 +1,59 @@
-// 1) Fetch the items from the JSON file
+// 1) fetch & parse
 function loadItems() {
   return fetch("./data/data.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json(); // JSON 파싱
+    .then((res) => {
+      if (!res.ok) throw new Error("Network error");
+      return res.json();
     })
-    .then((json) => json.items); // json.items 배열 리턴
+    .then((json) => json.items);
 }
 
-// 2) update the list with the given items
+// 2) render
 function displayItems(items) {
   const container = document.querySelector(".items");
   container.innerHTML = items.map((item) => createHTMLString(item)).join("");
 }
 
-// 3) Create HTML list item from the given data item
+// 3) template
 function createHTMLString(item) {
   return `
     <li class="item">
-      <!-- 이미지 src와 alt를 올바른 프로퍼티로 -->
-      <img 
-        src="${item.image}" 
-        alt="${item.type}" 
-        class="item-thumbnail"
-      >
-      <!-- 설명에 gender, size 활용 -->
-      <span class="item_description">
-        ${item.gender}, ${item.size}
-      </span>
-    </li>
-  `;
+      <img src="${item.image}" alt="${item.type}" class="item-thumbnail">
+      <span class="item_description">${item.gender}, ${item.size}</span>
+    </li>`;
 }
 
-// 4) main
+// 4) 버튼 클릭 핸들러
+function onButtonClick(event, items) {
+  const btn = event.target.closest(".btn");
+  if (!btn) return;
+
+  const { key, value } = btn.dataset;
+  if (!key || !value) return;
+
+  // OR 필터: key/value 중 하나라도 일치하는 아이템만
+  const filtered = items.filter((item) => item[key] === value);
+
+  displayItems(filtered);
+}
+
+// 5) 이벤트 등록
+function setEventListeners(items) {
+  // HTML 클래스에 맞춰 .btns 로 선택
+  document
+    .querySelector(".btns")
+    .addEventListener("click", (e) => onButtonClick(e, items));
+
+  // 로고 클릭 시 리셋
+  document
+    .querySelector(".logo")
+    .addEventListener("click", () => displayItems(items));
+}
+
+// 6) main
 loadItems()
   .then((items) => {
-    console.log("Loaded items:", items);
     displayItems(items);
-    // setEventListeners(items);
+    setEventListeners(items);
   })
-  .catch((err) => console.error("Error loading items:", err));
+  .catch((err) => console.error(err));
