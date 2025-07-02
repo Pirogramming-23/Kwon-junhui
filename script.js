@@ -1,3 +1,4 @@
+//js 파일
 let answer = [];
 let attempts = 9;
 
