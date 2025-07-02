@@ -1,0 +1,164 @@
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-blue: #3b88c3;
+  --color-yellow: #fbbe28;
+  --color-pink: #fd7f84;
+  --color-light-grey: #dfdfdf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #3f454d;
+  overflow: hidden;
+  justify-items: center;
+  align-items: center;
+}
+
+.header {
+  position: relative;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+#header-container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0;
+}
+
+#header-top {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header-logo {
+  box-sizing: border-box;
+  padding: 0 0;
+  margin: 0 0;
+}
+
+#header-down {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 5px;
+}
+
+.header-button {
+  display: flex;
+  padding: 0 0;
+  justify-content: center;
+  width: 40px;
+  height: 35px;
+  border: none;
+  background: none;
+  margin: 10px;
+  transition: transform 0.2s ease;
+}
+
+.header-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#header-down input:not(:checked)~.center .center-container .center-card {
+  display: block;
+}
+
+#color-btn-blue,
+#color-btn-yellow,
+#color-btn-pink {
+  margin-top: 7px;
+  font-weight: bold;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 0 0;
+  height: 20px;
+}
+
+#color-btn-blue {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 10px;
+  background-color: #3b88c3;
+}
+
+
+#color-btn-yellow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 10px;
+  background-color: #fbbe28;
+}
+
+
+#color-btn-pink {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 10px;
+  background-color: #fd7f84;
+}
+
+.center {
+  margin: 10px;
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 340px;
+  flex-grow: 1;
+}
+
+#center-container {
+  box-sizing: border-box;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 12px 0 1px;
+  overflow-y: scroll;
+}
+
+.center-card {
+  background-color: #dfdfdf;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.center-card>.info {
+  font-size: 10px;
+  width: 50%;
+}
+
+.item img {
+  margin: 14px 10px 10px 15px;
+  width: 30px;
+  height: 30px;
+}
