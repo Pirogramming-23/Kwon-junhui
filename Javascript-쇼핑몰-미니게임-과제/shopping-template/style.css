@@ -6,6 +6,13 @@
   --color-yellow: #fbbe28;
   --color-pink: #fd7f84;
   --color-light-grey: #dfdfdf;
+
+  /*size*/
+  --size-button: 60px;
+  --button-font-size: 18px;
+
+  /*animation*/
+  --size-animation-duration: 300ms;
 }
 
 body {
@@ -19,6 +26,7 @@ body {
 
 .logo {
   cursor: pointer;
+  transition: transform var(--size-animation-duration) ease;
 }
 
 .btn:hover,
@@ -31,4 +39,26 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
+  transition: transform var(--size-animation-duration) ease;
+}
+
+.imgBtn {
+  width: var(--size-button);
+  height: var(--size-button);
+}
+
+.colorBtn {
+  font-size: var(--button-font-size);
+}
+
+.blue {
+  background-color: var(--color-blue);
+}
+
+.yellow {
+  background-color: var(--color-yellow);
+}
+
+.pink {
+  background-color: var(--color-pink);
 }
