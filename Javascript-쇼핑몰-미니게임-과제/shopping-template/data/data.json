@@ -62,6 +62,13 @@
             "size": "large",
             "color": "yellow",
             "image": "./img/yellow_s.png"
+        },
+        {
+            "type": "skirt",
+            "gender": "male",
+            "size": "large",
+            "color": "yellow",
+            "image": "./img/yellow_s.png"
         }
     ]
 }
