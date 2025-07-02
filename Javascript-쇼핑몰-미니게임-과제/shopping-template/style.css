@@ -8,12 +8,14 @@
   --color-light-grey: #dfdfdf;
 
   /*size*/
-  --size-border: 4px;
+  <<<<<<< HEAD --size-border: 4px;
   --base-space: 8px;
   --size-button: 60px;
   --font-size: 18px;
   --size-thumbnail: 50px;
-
+  =======--size-button: 60px;
+  --button-font-size: 18px;
+  >>>>>>>29b190a5717cd8feee70c8e7754f9fb86af33e1d
   /*animation*/
   --size-animation-duration: 300ms;
 }
@@ -67,6 +69,7 @@ body {
   font-size: var(--font-size);
   padding: calc(var(--base-space));
   border-radius: var(--size-border);
+  font-size: var(--button-font-size);
 }
 
 .blue {
