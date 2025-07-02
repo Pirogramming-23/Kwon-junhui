@@ -8,6 +8,27 @@
   --color-light-grey: #dfdfdf;
 }
 
-* {
-  box-sizing: border-box;
+body {
+  height: 100vh;
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.btn:hover,
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
