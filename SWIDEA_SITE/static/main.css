@@ -95,3 +95,36 @@ body {
 .star-icon.starred {
   color: gold;
 }
+
+.sort-options {
+  text-align: right;
+  margin: 20px 30px 0 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.sort-options label {
+  margin-right: 8px;
+}
+
+.sort-options select {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.sort-options select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}

@@ -53,3 +53,36 @@ def adjust_level(request):
     idea.save()
 
     return JsonResponse({'level': idea.level})
+
+def idea_list(request):
+    sort = request.GET.get("sort")
+    
+    if sort == "latest":
+        ideas = Idea.objects.all().order_by("-id")  # 최신순
+    elif sort == "level_desc":
+        ideas = Idea.objects.all().order_by("-level")
+    elif sort == "level_asc":
+        ideas = Idea.objects.all().order_by("level")
+    else:
+        ideas = Idea.objects.all()
+
+    return render(request, 'main.html', {'ideas': ideas})
+
+def idea_manage(request):
+    ideas = Idea.objects.all()
+    return render(request, 'idea_manage.html', {'ideas': ideas})
+
+def idea_delete(request, idea_id):
+    idea = get_object_or_404(Idea, id=idea_id)
+    idea.delete()  
+    return redirect('idea_manage') 
+def idea_edit(request, idea_id):
+    idea = get_object_or_404(Idea, id=idea_id)
+    if request.method == 'POST':
+        form = IdeaForm(request.POST, request.FILES, instance=idea)
+        if form.is_valid():
+            form.save()
+            return redirect('idea_manage') 
+    else:
+        form = IdeaForm(instance=idea)
+    return render(request, 'idea_edit.html', {'form': form, 'idea': idea})

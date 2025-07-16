@@ -25,12 +25,23 @@
       </div>
       <div class="header-right">
         <a href="{% url 'idea_create' %}">아이디어 등록</a>
-        <a href="#">아이디어 관리</a>
+        <a href="{% url 'idea_manage' %}">아이디어 관리</a>
         <a href="#">개발툴 등록</a>
         <a href="#">개발툴 관리</a>
       </div>
     </div>
     <div class="center">
+        <div class="sort-options">
+            <form method="get">
+                <label for="sort"></label>
+                <select name="sort" id="sort" onchange="this.form.submit()">
+                <option value="">-- 선택 --</option>
+                <option value="latest" {% if request.GET.sort == "latest" %}selected{% endif %}>최신순</option>
+                <option value="level_desc" {% if request.GET.sort == "level_desc" %}selected{% endif %}>관심도 높은 순</option>
+                <option value="level_asc" {% if request.GET.sort == "level_asc" %}selected{% endif %}>관심도 낮은 순</option>
+                </select>
+            </form>
+        </div>
       <div class="center-container">
         {% for idea in ideas %}
         <div class="card" data-id="{{ idea.id }}">
