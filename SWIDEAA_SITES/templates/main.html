@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="ko">
 {% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{% static 'main.css' %}" rel="stylesheet">
     <title>IdeaPage</title>
 </head>
+
 <body>
-    <div id="header">
-        <div id="PageName">MY IDEA PAGE</div>
-        <ol>
-            <li>
-                아이디어 등록
-            </li>
-            <li>
-                아이디어 관리   
-            </li>
-            <li>
-                개발툴 관리 
-            </li>
-            <li>
-                개발툴 등록
-            </li>
-        </ol>
+    <div class="header">
+        <div class="header-left">
+            <h2>My Idea Page</h2>
+        </div>
+        <div class="header-right">
+            <a href="{% url 'idea_create' %}">아이디어 등록</a>
+            <a href="#">아이디어 관리</a>
+            <a href="#">개발툴 등록</a>
+            <a href="#">개발툴 관리</a>
+        </div>
+    </div>
+    <div class="center">
+        <div class="center-container">
+            {% for idea in ideas %}
+            <div class="card">
+                <img src="{{ idea.image.url }}" alt="Idea Image">
+                <h3>{{ idea.title }}</h3>
+                <p>예상 개발툴: {{ idea.tool }}</p>
+                <p>아이디어 컨셉도: + {{ idea.level }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 juni</p>
     </div>
 </body>
 
