@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  {% load static %}
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{% static 'main.css' %}" rel="stylesheet" />
+
+    <script>
+      const toggleStarUrl = "{% url 'toggle_star' %}";
+      const toggleLevelUrl = "{% url 'adjust_level' %}";
+      const csrfToken = "{{ csrf_token }}";
+    </script>
+    <script src="{% static 'js/toggle_star.js' %}" defer></script>
+    <script src="{% static 'js/adjust_level.js' %}" defer></script>
+
+    <title>IdeaPage</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <h2>My Idea Page</h2>
+      </div>
+      <div class="header-right">
+        <a href="{% url 'idea_create' %}">아이디어 등록</a>
+        <a href="{% url 'idea_manage' %}">아이디어 관리</a>
+        <a href="#">개발툴 등록</a>
+        <a href="#">개발툴 관리</a>
+      </div>
+    </div>
+    <div class="center">
+        <div class="sort-options">
+            <form method="get">
+                <label for="sort"></label>
+                <select name="sort" id="sort" onchange="this.form.submit()">
+                <option value="">-- 선택 --</option>
+                <option value="latest" {% if request.GET.sort == "latest" %}selected{% endif %}>최신순</option>
+                <option value="level_desc" {% if request.GET.sort == "level_desc" %}selected{% endif %}>관심도 높은 순</option>
+                <option value="level_asc" {% if request.GET.sort == "level_asc" %}selected{% endif %}>관심도 낮은 순</option>
+                </select>
+            </form>
+        </div>
+      <div class="center-container">
+        {% for idea in ideas %}
+        <div class="card" data-id="{{ idea.id }}">
+          <div class="star-container">
+            {% if idea.ideastar %}
+            <span class="star-icon starred">★</span>
+            {% else %}
+            <span class="star-icon">☆</span>
+            {% endif %}
+          </div>
+          <img src="{{ idea.image.url }}" alt="Idea Image" />
+          <a href="{% url 'idea_detail' idea.id %}" class="idea-title"
+            >{{ idea.title }}</a
+          >
+          <p>예상 개발툴: {{ idea.tool }}</p>
+          <p>아이디어 관심도</p>
+          <div class="level-controls">
+            <button class="level-btn" data-action="decrement">-</button>
+            <span class="level-value">{{ idea.level }}</span>
+            <button class="level-btn" data-action="increment">+</button>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2025 juni</p>
+    </div>
+  </body>
+</html>

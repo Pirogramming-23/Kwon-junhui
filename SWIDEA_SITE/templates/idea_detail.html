@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ idea.title }}</title>
+    <link href="{% static 'main.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>{{ idea.title }}</h1>
+    <img src="{{ idea.image.url }}" alt="{{ idea.title }}" width="200" />
+    <p><strong>예상 개발툴:</strong> {{ idea.tool }}</p>
+    <p><strong>아이디어 관심도:</strong> +{{ idea.level }}</p>
+    <hr />
+    <p><strong>아이디어 설명:</strong></p>
+    <p>{{ idea.description }}</p>
+    <br />
+    <a href="{% url 'idea_list' %}">← 목록으로 돌아가기</a>
+  </body>
+</html>

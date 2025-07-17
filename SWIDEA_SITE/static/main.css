@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1c1c1c;
+  color: white;
+  padding: 20px 40px;
+}
+
+.header-left h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header-right a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header-right a:hover {
+  text-decoration: underline;
+}
+
+.center {
+  background-color: #f2f2f2;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 30px 0;
+  background-image: url("image/background_image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.center-container {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  width: 200px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.idea-title {
+  text-decoration: none;
+  color: black;
+  transition: text-shadow 0.3s ease;
+}
+
+.idea-title:hover {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.card {
+  position: relative;
+}
+
+.star-icon {
+  font-size: 24px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.star-icon.starred {
+  color: gold;
+}
+
+.sort-options {
+  text-align: right;
+  margin: 20px 30px 0 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.sort-options label {
+  margin-right: 8px;
+}
+
+.sort-options select {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.sort-options select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}

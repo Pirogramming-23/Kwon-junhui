@@ -1,0 +1,5 @@
+<h2>아이디어 수정</h2>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">저장</button>
+</form>

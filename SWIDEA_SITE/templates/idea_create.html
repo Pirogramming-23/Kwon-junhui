@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>아이디어 등록</title>
+</head>
+
+<body>
+    <h1>아이디어 등록</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">등록</button>
+    </form>
+</body>
+
+</html>
