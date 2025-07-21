@@ -7,11 +7,11 @@
 <body>
   <h1>📌 게시글 작성</h1>
 
-  <form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">작성</button>
-  </form>
+  <form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">작성</button>
+</form>
 
   <a href="{% url 'post_list' %}">← 돌아가기</a>
 </body>

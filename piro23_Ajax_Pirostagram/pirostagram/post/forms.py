@@ -4,7 +4,7 @@ from .models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['content']
+        fields = ['content', 'image']
         widgets = {
-            'content': forms.Textarea(attrs={'placeholder': '게시글을 작성하세요', 'rows': 3})
+            'content': forms.Textarea(attrs={'placeholder': '게시글을 작성하세요', 'rows': 3}),
         }
