@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pirostagram</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'post/js/like_comment.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #fafafa;
+      }
+
+      header {
+        background-color: white;
+        border-bottom: 1px solid #dbdbdb;
+        padding: 15px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #262626;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 0 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #0095f6;
+        display: inline-block;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .post {
+        background-color: white;
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        margin-bottom: 40px;
+        overflow: hidden;
+      }
+
+      .post-content {
+        padding: 15px;
+      }
+
+      .post img {
+        width: 100%;
+        display: block;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+      }
+
+      .like-btn {
+        background: none;
+        border: none;
+        font-size: 16px;
+        font-weight: bold;
+        color: #ed4956;
+        cursor: pointer;
+        padding: 10px 0;
+      }
+
+      .comments {
+        padding: 10px 15px;
+        border-top: 1px solid #efefef;
+      }
+
+      .comment {
+        font-size: 14px;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .comment strong {
+        color: #262626;
+        margin-right: 5px;
+      }
+
+      .comment .delete-comment-btn {
+        background: none;
+        border: none;
+        color: #bbb;
+        font-size: 12px;
+        cursor: pointer;
+      }
+
+      .comment-input-section {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        border-top: 1px solid #efefef;
+      }
+
+      .comment-input {
+        flex-grow: 1;
+        border: none;
+        background: #fafafa;
+        padding: 8px;
+        font-size: 14px;
+      }
+
+      .add-comment-btn {
+        background: none;
+        border: none;
+        color: #0095f6;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 0 10px;
+      }
+
+      .comment-input:focus {
+        outline: none;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>Pirostagram</h1>
+    <a href="{% url 'post_create' %}">✏️ 새 게시글 작성</a>
+
+    {% for post in posts %}
+    <div class="post" data-post-id="{{ post.id }}">
+      <p>{{ post.content }}</p>
+
+      {% if post.image %}
+        <img src="{{ post.image.url }}" alt="이미지" style="max-width: 300px;" />
+      {% endif %}
+
+      <button class="like-btn">❤️ {{ post.liked_users.count }}</button>
+
+      <div class="comments">
+        {% for comment in post.comments.all %}
+        <div class="comment" data-comment-id="{{ comment.id }}">
+          <strong>{{ comment.user.username }}</strong>: {{ comment.text }}
+          {% if comment.user == user %}
+            <button class="delete-comment-btn">삭제</button>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+      <input type="text" class="comment-input" placeholder="댓글 입력" />
+      <button class="add-comment-btn">댓글 작성</button>
+    </div>
+    <hr />
+    {% endfor %}
+  </body>
+</html>
